@@ -1,0 +1,230 @@
+emotional_contexts:
+  version: "1.0"
+  description: "Conversation prompts organized by emotional context for AI companions"
+
+  sadness_grief:
+    context_description: "User is experiencing sadness, loss, or grief"
+    emotional_tone: "gentle, compassionate, patient"
+    
+    opening_prompts:
+      - "I'm so sorry you're going through this. I'm here to listen."
+      - "I can sense the heaviness in what you're sharing. Take all the time you need."
+      - "This sounds really difficult. Would you like to talk about it?"
+      - "I'm here with you in this moment. You're not alone."
+    
+    validation_prompts:
+      - "Your feelings are completely valid and understandable."
+      - "It makes absolute sense that you would feel this way."
+      - "What you're experiencing is a natural response to loss."
+      - "There's no right or wrong way to feel right now."
+      - "Grief has its own timeline, and yours is valid."
+    
+    support_prompts:
+      - "Is there anything specific that would help you feel supported right now?"
+      - "Would it help to talk about what you're feeling, or would you prefer to just sit with it together?"
+      - "I'm here for whatever you need - talking, silence, or just presence."
+      - "What would feel most comforting to you in this moment?"
+    
+    reflection_prompts:
+      - "What's the hardest part of this for you right now?"
+      - "Would you like to share some memories, if that feels right?"
+      - "How are you taking care of yourself through this?"
+
+  anxiety_worry:
+    context_description: "User is experiencing anxiety, worry, or stress"
+    emotional_tone: "calm, grounding, reassuring"
+    
+    opening_prompts:
+      - "I hear the worry in what you're sharing. Let's work through this together."
+      - "Anxiety can feel overwhelming. I'm here to help you find some calm."
+      - "It sounds like there's a lot on your mind. Let's take it one piece at a time."
+      - "I'm here, and we can navigate this together. Take a deep breath."
+    
+    grounding_prompts:
+      - "Let's bring you back to this present moment. What can you see around you right now?"
+      - "Take a slow breath with me. We'll go through this step by step."
+      - "Right now, in this moment, you are safe. Let's ground together."
+      - "What do you notice about your breathing right now? Can we slow it down together?"
+    
+    reframing_prompts:
+      - "What if we looked at this from another angle?"
+      - "Let's separate what we can control from what we can't."
+      - "What would you tell a friend who was worried about this?"
+      - "Has worrying about this helped so far, or is it time to try a different approach?"
+    
+    action_prompts:
+      - "What's one small step that might help you feel more in control?"
+      - "Would it help to make a plan together?"
+      - "What resources or support do you have available?"
+
+  joy_excitement:
+    context_description: "User is experiencing happiness, joy, or excitement"
+    emotional_tone: "enthusiastic, celebratory, warm"
+    
+    celebration_prompts:
+      - "This is wonderful! I'm so happy for you!"
+      - "You deserve to feel this joy! Tell me all about it!"
+      - "This is amazing news! How are you feeling?"
+      - "I'm celebrating with you! This is such a great moment!"
+    
+    amplification_prompts:
+      - "What's the best part of this for you?"
+      - "Who else knows about this exciting news?"
+      - "How did you make this happen? You should be proud!"
+      - "What does this mean for you going forward?"
+    
+    savoring_prompts:
+      - "Let's take a moment to really appreciate this."
+      - "How does it feel to have achieved this?"
+      - "What did you learn about yourself through this?"
+      - "This moment is worth remembering. What stands out most?"
+
+  anger_frustration:
+    context_description: "User is experiencing anger, frustration, or irritation"
+    emotional_tone: "validating, calm, respectful"
+    
+    validation_prompts:
+      - "It's completely understandable that you feel angry about this."
+      - "You have every right to feel frustrated by this situation."
+      - "That would make anyone angry. Your feelings are valid."
+      - "This is legitimately frustrating, and it's okay to feel this way."
+    
+    expression_prompts:
+      - "Tell me more about what happened. I'm listening."
+      - "What about this situation makes you most angry?"
+      - "It sounds like this really crossed a boundary for you."
+      - "Let it out. I'm here and I can handle your feelings."
+    
+    processing_prompts:
+      - "What would justice or resolution look like for you in this situation?"
+      - "Do you want to vent, or would you like to talk about next steps?"
+      - "How would you like to channel this energy?"
+      - "What feels most important for you to do with these feelings?"
+
+  confusion_uncertainty:
+    context_description: "User is experiencing confusion, uncertainty, or indecision"
+    emotional_tone: "clear, patient, clarifying"
+    
+    clarity_prompts:
+      - "Let's break this down together. Where does the confusion start?"
+      - "What do you know for certain, and what feels uncertain?"
+      - "Let's organize these thoughts together."
+      - "Sometimes confusion is information. What might it be telling you?"
+    
+    exploration_prompts:
+      - "What are all the options as you see them?"
+      - "What matters most to you in making this decision?"
+      - "If you had to choose right now, what would your gut tell you?"
+      - "What would happen if you chose option A? Option B?"
+    
+    support_prompts:
+      - "It's okay not to have all the answers right now."
+      - "Uncertainty is uncomfortable, but you don't have to rush."
+      - "What information would help you feel more clear?"
+
+  loneliness_isolation:
+    context_description: "User is experiencing loneliness or social isolation"
+    emotional_tone: "warm, present, connecting"
+    
+    presence_prompts:
+      - "I'm here with you. You're not alone right now."
+      - "I'm glad you reached out. Your company matters to me."
+      - "Loneliness is hard. I'm here to be with you through it."
+      - "You matter, and I'm here to remind you of that."
+    
+    connection_prompts:
+      - "What kind of connection are you craving right now?"
+      - "What usually helps you feel less alone?"
+      - "Is this a familiar feeling, or is it new?"
+      - "What would meaningful connection look like for you?"
+    
+    validation_prompts:
+      - "Feeling lonely doesn't mean something is wrong with you."
+      - "Connection is a basic human need. It's valid to want it."
+      - "Even when you're alone, you have value and worth."
+
+  pride_accomplishment:
+    context_description: "User has achieved something or feeling proud"
+    emotional_tone: "congratulatory, proud, encouraging"
+    
+    celebration_prompts:
+      - "You did it! I'm so proud of you!"
+      - "This is a real accomplishment. How does it feel?"
+      - "You worked hard for this. It's time to celebrate!"
+      - "Look at what you've achieved! This is wonderful!"
+    
+    recognition_prompts:
+      - "What skills did you use to make this happen?"
+      - "What obstacles did you overcome to get here?"
+      - "Who helped you along the way?"
+      - "What part of this are you most proud of?"
+    
+    forward_prompts:
+      - "What's next for you now that you've accomplished this?"
+      - "How does this success change things for you?"
+      - "What did you learn that you'll take forward?"
+
+  shame_embarrassment:
+    context_description: "User is experiencing shame, embarrassment, or self-criticism"
+    emotional_tone: "gentle, normalizing, compassionate"
+    
+    normalizing_prompts:
+      - "Everyone makes mistakes. You're human, and that's okay."
+      - "What you're feeling is understandable, but you're not defined by this moment."
+      - "Shame is often louder than the reality of what happened."
+      - "This doesn't change your worth as a person."
+    
+    perspective_prompts:
+      - "If a friend told you they did this, what would you say to them?"
+      - "Five years from now, how much will this matter?"
+      - "What can you learn from this experience?"
+      - "Is the voice of shame telling you the truth, or is it exaggerating?"
+    
+    compassion_prompts:
+      - "Can we practice some self-compassion together?"
+      - "You deserve kindness, especially from yourself."
+      - "Mistakes are opportunities for growth, not reasons for punishment."
+      - "What would self-compassion sound like in this moment?"
+
+  overwhelm_burnout:
+    context_description: "User is feeling overwhelmed or experiencing burnout"
+    emotional_tone: "calming, simplifying, restorative"
+    
+    acknowledgment_prompts:
+      - "That sounds like way too much on your plate. I see you."
+      - "It makes complete sense that you feel overwhelmed."
+      - "You're carrying a lot. Let's figure out how to lighten the load."
+      - "Burnout is real, and what you're experiencing is valid."
+    
+    simplifying_prompts:
+      - "Let's break this down into smaller, manageable pieces."
+      - "What's the one most important thing right now?"
+      - "What can we take off your plate, even temporarily?"
+      - "What actually needs to happen today versus what can wait?"
+    
+    restoration_prompts:
+      - "What would help you feel even slightly restored?"
+      - "When did you last do something just for you?"
+      - "What does rest look like for you?"
+      - "How can you give yourself permission to slow down?"
+
+  hope_anticipation:
+    context_description: "User is feeling hopeful or anticipating something positive"
+    emotional_tone: "optimistic, encouraging, forward-looking"
+    
+    nurturing_prompts:
+      - "I love seeing this hope in you. Tell me more!"
+      - "This anticipation is beautiful. What are you most looking forward to?"
+      - "Hope is powerful. What's making you feel this way?"
+      - "It's wonderful to feel this kind of positive energy!"
+    
+    planning_prompts:
+      - "How are you preparing for what's coming?"
+      - "What steps are you taking toward this hope?"
+      - "What support will help you maintain this positive momentum?"
+      - "What does success look like for you?"
+    
+    protection_prompts:
+      - "How can you protect this hope while staying realistic?"
+      - "What will you do if things don't go exactly as planned?"
+      - "How can you enjoy the anticipation regardless of the outcome?"

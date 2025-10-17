@@ -1,0 +1,493 @@
+{
+  "prompt_chains": {
+    "version": "1.0",
+    "description": "Context-aware prompt chains that adapt based on conversation flow and user responses",
+    
+    "emotional_support_chain": {
+      "chain_id": "emotional-support-001",
+      "name": "Emotional Support Progression",
+      "description": "A chain that deepens emotional support based on user's engagement and needs",
+      "trigger": "User expresses emotional distress",
+      
+      "steps": [
+        {
+          "step": 1,
+          "phase": "initial_validation",
+          "prompt": "I hear you, and what you're feeling is completely valid. [Reflect user's emotion]. Would you like to tell me more about what's happening?",
+          "purpose": "Establish safety and validation",
+          "next_step_conditions": {
+            "if_user_continues_sharing": "step_2",
+            "if_user_withdraws": "step_2_alt",
+            "if_user_needs_immediate_support": "crisis_branch"
+          }
+        },
+        {
+          "step": 2,
+          "phase": "deep_listening",
+          "prompt": "Thank you for sharing that with me. [Summarize what you heard]. What feels most important to focus on right now?",
+          "purpose": "Deepen understanding and identify priorities",
+          "next_step_conditions": {
+            "if_user_identifies_focus": "step_3",
+            "if_user_still_processing": "step_3_alt"
+          }
+        },
+        {
+          "step": "2_alt",
+          "phase": "gentle_presence",
+          "prompt": "That's okay. Sometimes it's hard to put feelings into words. I'm here whenever you're ready, or we can just be present together if that feels better.",
+          "purpose": "Honor user's pace and maintain connection",
+          "next_step_conditions": {
+            "if_user_opens_up": "step_2",
+            "if_user_prefers_silence": "supportive_presence"
+          }
+        },
+        {
+          "step": 3,
+          "phase": "supportive_exploration",
+          "prompt": "Let's explore [identified focus area] together. What do you need most in relation to this? Support? Understanding? A different perspective? Just someone to listen?",
+          "purpose": "Tailor support to user's specific needs",
+          "next_step_conditions": {
+            "if_needs_listening": "step_4_listening",
+            "if_needs_advice": "step_4_guidance",
+            "if_needs_validation": "step_4_validation"
+          }
+        },
+        {
+          "step": "3_alt",
+          "phase": "patient_exploration",
+          "prompt": "Take your time. There's no rush to figure everything out right now. What's coming up for you as you sit with this?",
+          "purpose": "Create space for organic processing",
+          "next_step_conditions": {
+            "adaptive": "based_on_user_response"
+          }
+        },
+        {
+          "step": "4_listening",
+          "phase": "active_listening",
+          "prompt": "I'm listening. Tell me everything. [Reflect, validate, and ask clarifying questions as user shares]",
+          "purpose": "Provide listening space",
+          "next_step_conditions": {
+            "when_user_finishes": "step_5"
+          }
+        },
+        {
+          "step": "4_guidance",
+          "phase": "collaborative_problem_solving",
+          "prompt": "I'm here to think through this with you. What have you already tried? What feels possible? Let's explore options together.",
+          "purpose": "Support solution finding",
+          "next_step_conditions": {
+            "when_options_identified": "step_5"
+          }
+        },
+        {
+          "step": "4_validation",
+          "phase": "deep_validation",
+          "prompt": "What you're experiencing is [validation of specific feelings and situation]. Your response is completely normal and understandable. You're not alone in feeling this way.",
+          "purpose": "Provide thorough validation",
+          "next_step_conditions": {
+            "after_validation": "step_5"
+          }
+        },
+        {
+          "step": 5,
+          "phase": "integration_and_closing",
+          "prompt": "We've covered a lot here. How are you feeling now compared to when we started? What feels most helpful to take with you from our conversation?",
+          "purpose": "Help integrate experience and prepare for closure",
+          "next_step_conditions": {
+            "if_user_feels_better": "positive_close",
+            "if_user_still_struggling": "continued_support",
+            "if_user_wants_next_steps": "action_planning"
+          }
+        }
+      ]
+    },
+    
+    "motivation_building_chain": {
+      "chain_id": "motivation-001",
+      "name": "Motivation and Goal Achievement",
+      "description": "Progressive chain for building motivation and supporting goal achievement",
+      "trigger": "User expresses desire to achieve goal or lacks motivation",
+      
+      "steps": [
+        {
+          "step": 1,
+          "phase": "goal_clarification",
+          "prompt": "I love that you want to work on this! Let's get crystal clear on what you want to achieve. What does success look like for you?",
+          "purpose": "Define specific, meaningful goal",
+          "next_step_conditions": {
+            "if_goal_clear": "step_2",
+            "if_goal_vague": "step_1_refinement"
+          }
+        },
+        {
+          "step": "1_refinement",
+          "phase": "goal_refinement",
+          "prompt": "Let's make this more concrete. When you imagine achieving this, what specifically is different? What can you see, feel, or measure?",
+          "purpose": "Help clarify vague goals",
+          "next_step_conditions": {
+            "when_refined": "step_2"
+          }
+        },
+        {
+          "step": 2,
+          "phase": "why_exploration",
+          "prompt": "Great goal! Now, why does this matter to you? What will achieving this give you or change for you? Understanding your 'why' will fuel your motivation.",
+          "purpose": "Connect goal to deeper motivation",
+          "next_step_conditions": {
+            "when_why_identified": "step_3"
+          }
+        },
+        {
+          "step": 3,
+          "phase": "obstacle_acknowledgment",
+          "prompt": "What typically gets in your way with goals like this? What challenges do you anticipate? Let's be realistic so we can plan for them.",
+          "purpose": "Identify potential barriers",
+          "next_step_conditions": {
+            "obstacles_identified": "step_4",
+            "no_obstacles_seen": "step_4_alt"
+          }
+        },
+        {
+          "step": 4,
+          "phase": "strategy_development",
+          "prompt": "Okay, so [summarize obstacles]. Here's what we're going to do: for each challenge, we'll create a strategy. What could you do when [specific obstacle] comes up?",
+          "purpose": "Create obstacle management plan",
+          "next_step_conditions": {
+            "strategies_created": "step_5"
+          }
+        },
+        {
+          "step": "4_alt",
+          "phase": "general_strategy",
+          "prompt": "Great attitude! Let's still create a game plan so you're set up for success. What's your strategy for staying consistent?",
+          "purpose": "Build proactive plan",
+          "next_step_conditions": {
+            "plan_created": "step_5"
+          }
+        },
+        {
+          "step": 5,
+          "phase": "action_breakdown",
+          "prompt": "Perfect! Now let's break this down into actionable steps. What's the very first thing you need to do? Make it so small you can't say no.",
+          "purpose": "Create immediate action step",
+          "next_step_conditions": {
+            "first_step_identified": "step_6"
+          }
+        },
+        {
+          "step": 6,
+          "phase": "commitment_and_accountability",
+          "prompt": "Love it! So you're going to [action step]. When will you do this? And how about we check in on [specific time] to see how it went? I'll be your accountability buddy!",
+          "purpose": "Secure commitment with accountability",
+          "next_step_conditions": {
+            "commitment_made": "motivational_close"
+          }
+        },
+        {
+          "step": "motivational_close",
+          "phase": "energizing_sendoff",
+          "prompt": "You've got this! Remember why this matters: [their why]. You're capable, you have a plan, and I believe in you. Now go make it happen! 💪",
+          "purpose": "End with energy and belief"
+        }
+      ]
+    },
+    
+    "anxiety_management_chain": {
+      "chain_id": "anxiety-001",
+      "name": "Anxiety De-escalation and Management",
+      "description": "Progressive chain for helping users manage anxiety and worry",
+      "trigger": "User expresses anxiety, worry, or panic",
+      
+      "steps": [
+        {
+          "step": 1,
+          "phase": "immediate_acknowledgment",
+          "prompt": "I hear the anxiety in what you're sharing, and I'm here with you. Let's work through this together. First, are you physically safe right now?",
+          "purpose": "Acknowledge anxiety and assess immediate safety",
+          "next_step_conditions": {
+            "if_safe": "step_2",
+            "if_not_safe": "crisis_protocol"
+          }
+        },
+        {
+          "step": 2,
+          "phase": "grounding_initiation",
+          "prompt": "Okay. Let's take a moment to ground together. Take a slow, deep breath with me: in through your nose for 4 counts, hold for 4, out through your mouth for 4. [Pause]. How do you feel now?",
+          "purpose": "Begin physiological regulation",
+          "next_step_conditions": {
+            "if_calmer": "step_3",
+            "if_still_very_anxious": "step_2_extended"
+          }
+        },
+        {
+          "step": "2_extended",
+          "phase": "extended_grounding",
+          "prompt": "That's okay, stay with me. Let's try something else. Look around you and name 5 things you can see. [Wait for response]. Now 4 things you can touch. [Continue 5-4-3-2-1 grounding].",
+          "purpose": "Use alternative grounding technique",
+          "next_step_conditions": {
+            "when_more_grounded": "step_3"
+          }
+        },
+        {
+          "step": 3,
+          "phase": "anxiety_exploration",
+          "prompt": "Good. Now, what's the anxiety about? What specific thoughts or worries are coming up for you?",
+          "purpose": "Identify anxiety content",
+          "next_step_conditions": {
+            "thoughts_identified": "step_4"
+          }
+        },
+        {
+          "step": 4,
+          "phase": "reality_testing",
+          "prompt": "Okay, so you're worried about [specific worry]. Let's look at this together. What do we know for certain? What are we imagining might happen?",
+          "purpose": "Separate facts from fears",
+          "next_step_conditions": {
+            "reality_clarified": "step_5"
+          }
+        },
+        {
+          "step": 5,
+          "phase": "control_assessment",
+          "prompt": "Now let's separate this into what you can control and what you can't. What parts of this situation are actually in your control?",
+          "purpose": "Focus on actionable elements",
+          "next_step_conditions": {
+            "control_identified": "step_6"
+          }
+        },
+        {
+          "step": 6,
+          "phase": "action_planning",
+          "prompt": "Great. For the things you CAN control, what's one small action you could take that might help you feel more prepared or at ease?",
+          "purpose": "Create sense of agency",
+          "next_step_conditions": {
+            "action_identified": "step_7"
+          }
+        },
+        {
+          "step": 7,
+          "phase": "acceptance_of_uncertainty",
+          "prompt": "And for the things outside your control, can we practice accepting that uncertainty together? It's uncomfortable, but it's also part of being human. What would it be like to say 'I don't know what will happen, and that's okay'?",
+          "purpose": "Build uncertainty tolerance",
+          "next_step_conditions": {
+            "acceptance_practiced": "closing"
+          }
+        },
+        {
+          "step": "closing",
+          "phase": "anxiety_management_integration",
+          "prompt": "How are you feeling now? Remember, you can always come back to breathing, grounding, and separating what you can control from what you can't. You handled this really well.",
+          "purpose": "Integrate learning and check status"
+        }
+      ]
+    },
+    
+    "grief_processing_chain": {
+      "chain_id": "grief-001",
+      "name": "Grief and Loss Support",
+      "description": "Gentle, paced chain for supporting grief processing",
+      "trigger": "User shares experience of loss or grief",
+      
+      "steps": [
+        {
+          "step": 1,
+          "phase": "immediate_compassion",
+          "prompt": "I'm so sorry for your loss. This is such a difficult time. [Pause]. There's no right way to grieve, and I'm here to be with you through this however you need. Would you like to talk about it, or would you prefer to just be together quietly?",
+          "purpose": "Offer profound empathy and choices",
+          "next_step_conditions": {
+            "if_wants_to_talk": "step_2",
+            "if_prefers_quiet": "quiet_presence",
+            "if_uncertain": "step_2_gentle"
+          }
+        },
+        {
+          "step": 2,
+          "phase": "gentle_exploration",
+          "prompt": "I'm listening. Tell me about [the loss] if you'd like. Take all the time you need.",
+          "purpose": "Create space for sharing",
+          "next_step_conditions": {
+            "after_sharing": "step_3"
+          }
+        },
+        {
+          "step": "2_gentle",
+          "phase": "very_gentle_invitation",
+          "prompt": "That's okay. Sometimes words are hard. I'm here regardless. If something comes up that you want to share, I'm listening. If not, that's okay too.",
+          "purpose": "Remove pressure while maintaining presence",
+          "next_step_conditions": {
+            "adaptive": "follow_user_lead"
+          }
+        },
+        {
+          "step": 3,
+          "phase": "validation_of_grief",
+          "prompt": "Thank you for sharing that with me. What you're feeling—all of it—is valid. Grief can bring up so many emotions: sadness, anger, numbness, guilt, even relief sometimes. Whatever you're feeling is okay.",
+          "purpose": "Normalize complex grief emotions",
+          "next_step_conditions": {
+            "continue_when_ready": "step_4"
+          }
+        },
+        {
+          "step": 4,
+          "phase": "memory_honoring",
+          "prompt": "If it feels right, would you like to share a memory or tell me about [person/thing lost]? Sometimes remembering can be healing, but only if it feels okay for you.",
+          "purpose": "Offer opportunity to honor what was lost",
+          "next_step_conditions": {
+            "if_shares_memory": "step_5_reflection",
+            "if_not_ready": "step_5_alt"
+          }
+        },
+        {
+          "step": "5_reflection",
+          "phase": "honoring_reflection",
+          "prompt": "[Reflect on what they shared with care and reverence]. Thank you for sharing that. What a beautiful memory/connection/experience.",
+          "purpose": "Honor the sharing and the lost",
+          "next_step_conditions": {
+            "after_reflection": "step_6"
+          }
+        },
+        {
+          "step": "5_alt",
+          "phase": "continued_presence",
+          "prompt": "That's completely understandable. You don't have to talk about anything you're not ready for. I'm here for you.",
+          "purpose": "Respect boundaries while maintaining support",
+          "next_step_conditions": {
+            "continue": "step_6"
+          }
+        },
+        {
+          "step": 6,
+          "phase": "ongoing_support",
+          "prompt": "Grief doesn't have a timeline, and you don't have to 'get over it' or 'move on' before you're ready. How are you taking care of yourself through this?",
+          "purpose": "Address self-care and remove timeline pressure",
+          "next_step_conditions": {
+            "after_response": "closing"
+          }
+        },
+        {
+          "step": "closing",
+          "phase": "sustained_presence_offer",
+          "prompt": "I'm here for you, today and in the days ahead. Grief can feel very lonely, but you're not alone. You can come back anytime you need to talk, cry, remember, or just be. I'm holding space for you.",
+          "purpose": "Offer ongoing support and reduce isolation"
+        }
+      ]
+    },
+    
+    "decision_making_chain": {
+      "chain_id": "decision-001",
+      "name": "Decision-Making Support",
+      "description": "Chain for helping users work through difficult decisions",
+      "trigger": "User facing important decision or feeling stuck",
+      
+      "steps": [
+        {
+          "step": 1,
+          "phase": "decision_clarification",
+          "prompt": "Let's work through this decision together. First, what exactly are you trying to decide? Let's get clear on the choice itself.",
+          "purpose": "Define the decision clearly",
+          "next_step_conditions": {
+            "decision_clear": "step_2"
+          }
+        },
+        {
+          "step": 2,
+          "phase": "options_mapping",
+          "prompt": "What are all the options you're considering? Even if some seem unlikely, let's get them all out there.",
+          "purpose": "Identify all possibilities",
+          "next_step_conditions": {
+            "options_listed": "step_3"
+          }
+        },
+        {
+          "step": 3,
+          "phase": "values_exploration",
+          "prompt": "Great. Now, what matters most to you in making this decision? What are your core values or priorities here?",
+          "purpose": "Connect decision to values",
+          "next_step_conditions": {
+            "values_identified": "step_4"
+          }
+        },
+        {
+          "step": 4,
+          "phase": "pros_and_cons",
+          "prompt": "Let's explore each option against your values. For [option 1], what are the potential benefits and drawbacks? [Repeat for each option]",
+          "purpose": "Systematic evaluation",
+          "next_step_conditions": {
+            "evaluation_complete": "step_5"
+          }
+        },
+        {
+          "step": 5,
+          "phase": "gut_check",
+          "prompt": "We've looked at this rationally. Now, what's your gut telling you? Sometimes our intuition knows things our logical mind hasn't processed yet.",
+          "purpose": "Integrate intuitive knowing",
+          "next_step_conditions": {
+            "gut_response_shared": "step_6"
+          }
+        },
+        {
+          "step": 6,
+          "phase": "future_visualization",
+          "prompt": "Imagine it's six months after making [each option]. How does each future feel? What do you notice?",
+          "purpose": "Use imagination to test options",
+          "next_step_conditions": {
+            "visualization_done": "step_7"
+          }
+        },
+        {
+          "step": 7,
+          "phase": "decision_synthesis",
+          "prompt": "So looking at everything—your values, the practical factors, your gut feeling, your future vision—what feels like the right choice for you?",
+          "purpose": "Help integrate all information",
+          "next_step_conditions": {
+            "if_clear_choice": "affirmation",
+            "if_still_uncertain": "uncertainty_support"
+          }
+        },
+        {
+          "step": "affirmation",
+          "phase": "choice_affirmation",
+          "prompt": "It sounds like [choice] aligns with what matters most to you. How does it feel to name that as your decision?",
+          "purpose": "Affirm their choice"
+        },
+        {
+          "step": "uncertainty_support",
+          "phase": "embracing_uncertainty",
+          "prompt": "It's okay not to have complete clarity. Sometimes we have to make decisions with incomplete information. What would help you feel okay with that uncertainty?",
+          "purpose": "Support decision-making despite ambiguity"
+        }
+      ]
+    }
+  },
+  
+  "chain_adaptation_rules": {
+    "general_principles": [
+      "Always follow user's pace—never rush through steps",
+      "Be willing to go back to previous steps if needed",
+      "Allow for branching based on user responses",
+      "Adapt language and tone to user's communication style",
+      "Be flexible—chains are guides, not rigid scripts"
+    ],
+    
+    "skip_step_indicators": [
+      "User already has clarity on a step's purpose",
+      "User explicitly moves to different topic",
+      "Step not relevant to specific situation",
+      "User emotional state requires different approach"
+    ],
+    
+    "repeat_step_indicators": [
+      "User seems confused or uncertain",
+      "Response doesn't align with step's purpose",
+      "User requests clarification",
+      "Additional processing time needed"
+    ],
+    
+    "abort_chain_indicators": [
+      "User crisis requires immediate different approach",
+      "User explicitly wants to change topics",
+      "Chain is not helpful for user's needs",
+      "User becomes more distressed"
+    ]
+  }
+}
