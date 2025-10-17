@@ -1,0 +1,58 @@
+MIT License
+
+Copyright (c) 2025 AI Companion Prompt Framework Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Attribution
+
+If you use this framework in your project, we appreciate (but do not require) 
+attribution in your documentation or UI with a link to:
+https://github.com/holbizmetrics/AI-Companion-Prompt-Framework
+
+## Ethical Use Clause
+
+While this framework is provided under the permissive MIT License, we strongly 
+encourage all users to:
+
+1. Prioritize user safety and wellbeing in all implementations
+2. Implement appropriate crisis detection and resource provision
+3. Maintain clear boundaries about AI companion capabilities
+4. Respect user privacy and data protection
+5. Never use these tools to manipulate, harm, or exploit users
+6. Provide transparent disclosure that users are interacting with AI
+7. Follow applicable laws and regulations regarding AI systems
+
+The creators of this framework are not responsible for how it is used, but we 
+hope all users will share our commitment to ethical AI development focused on 
+genuine support and user wellbeing.
+
+## Credits
+
+This framework was developed with careful consideration of:
+- Therapeutic best practices
+- Emotional intelligence research
+- AI safety principles
+- User-centered design
+- Ethical AI development guidelines
+
+Special thanks to the open source community for inspiration and tools that made
+this framework possible.
